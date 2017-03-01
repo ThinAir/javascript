@@ -371,7 +371,7 @@ Other Style Guides
 
     ```javascript
     // good
-    [1, 2, 3].map((x) => {
+    [1, 2, 3].map(x => {
       const y = x + 1;
       return x * y;
     });
@@ -395,7 +395,7 @@ Other Style Guides
     });
 
     // bad
-    inbox.filter((msg) => {
+    inbox.filter(msg => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
         return author === 'Harper Lee';
@@ -405,7 +405,7 @@ Other Style Guides
     });
 
     // good
-    inbox.filter((msg) => {
+    inbox.filter(msg => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
         return author === 'Harper Lee';
@@ -869,7 +869,7 @@ Other Style Guides
     });
 
     // good
-    [1, 2, 3].map((x) => {
+    [1, 2, 3].map(x => {
       const y = x + 1;
       return x * y;
     });
@@ -891,7 +891,7 @@ Other Style Guides
     [1, 2, 3].map(number => `A string containing the ${number}.`);
 
     // good
-    [1, 2, 3].map((number) => {
+    [1, 2, 3].map(number => {
       const nextNumber = number + 1;
       return `A string containing the ${nextNumber}.`;
     });
@@ -925,9 +925,7 @@ Other Style Guides
     ```
 
   <a name="arrows--one-arg-parens"></a><a name="8.4"></a>
-  - [8.4](#arrows--one-arg-parens) If your function takes a single argument and doesn’t use braces, omit the parentheses. Otherwise, always include parentheses around arguments for clarity and consistency. Note: it is also acceptable to always use parentheses, in which case use the ["always" option](http://eslint.org/docs/rules/arrow-parens#always) for eslint or do not include [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam) for jscs. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
-
-    > Why? Less visual clutter.
+  - [8.4](#arrows--one-arg-parens) If your function takes a single argument, omit the parentheses.
 
     ```javascript
     // bad
@@ -942,13 +940,13 @@ Other Style Guides
     ));
 
     // bad
-    [1, 2, 3].map(x => {
+    [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
     });
 
     // good
-    [1, 2, 3].map((x) => {
+    [1, 2, 3].map(x => {
       const y = x + 1;
       return x * y;
     });
@@ -961,14 +959,11 @@ Other Style Guides
     // bad
     const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;
 
-    // bad
-    const itemHeight = (item) => item.height > 256 ? item.largeSize : item.smallSize;
-
     // good
     const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);
 
     // good
-    const itemHeight = (item) => {
+    const itemHeight = item => {
       const { height, largeSize, smallSize } = item;
       return height > 256 ? largeSize : smallSize;
     };
