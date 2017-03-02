@@ -4,12 +4,6 @@
   "description": "Airbnb's base JS ESLint config, following our styleguide",
   "main": "index.js",
   "scripts": {
-    "prelint": "editorconfig-tools check * rules/* test/*",
-    "lint": "eslint .",
-    "tests-only": "babel-tape-runner ./test/test-*.js",
-    "pretest": "npm run --silent lint",
-    "test": "npm run --silent tests-only",
-    "travis": "npm run --silent test"
   },
   "repository": {
     "type": "git",

@@ -3,14 +3,6 @@
   "version": "2.0.0",
   "description": "A mostly reasonable approach to JavaScript.",
   "scripts": {
-    "install:config": "cd packages/eslint-config-airbnb && npm prune && npm install",
-    "install:config:base": "cd packages/eslint-config-airbnb-base && npm prune && npm install",
-    "test": "npm run --silent test:config && npm run --silent test:config:base",
-    "test:config": "cd packages/eslint-config-airbnb; npm test",
-    "test:config:base": "cd packages/eslint-config-airbnb-base; npm test",
-    "travis": "npm run --silent travis:config && npm run --silent travis:config:base",
-    "travis:config": "cd packages/eslint-config-airbnb; npm run travis",
-    "travis:config:base": "cd packages/eslint-config-airbnb-base; npm run travis"
   },
   "repository": {
     "type": "git",
@@ -30,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/airbnb/javascript/issues"
   },
-  "homepage": "https://github.com/airbnb/javascript"
+  "homepage": "https://github.com/airbnb/javascript",
+  "dependencies": {
+    "eslint-config-airbnb-base": "./packages/eslint-config-airbnb-base",
+    "eslint-config-airbnb": "./packages/eslint-config-airbnb"
+  }
 }
